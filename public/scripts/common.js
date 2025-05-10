@@ -101,6 +101,7 @@ const japanBaseMap = L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/
   attribution: '&copy; <a href="https://maps.gsi.go.jp/development/ichiran.html">国土地理院</a>'
 })
 
+
 const grayIcon = L.icon({
   iconUrl: "https://unpkg.com/leaflet/dist/images/marker-icon.png",
   iconRetinaUrl: "https://unpkg.com/leaflet/dist/images/marker-icon-2x.png",
@@ -110,4 +111,13 @@ const grayIcon = L.icon({
   shadowSize: [32.8, 32.8],
   className: "icon-gray",
 });
+
+// ------------------------------------------------------------
+// ブロックごとの初期中心座標＆ズーム（日高郡版）
+// - hidaka-coast  : 美浜・由良・印南・みなべ（海岸部）
+// - hidaka-inland : 日高・日高川（内陸部）
+export const mapConfig = {
+  "hidaka-coast":  { center: [33.93, 135.11], zoom: 11 },
+  "hidaka-inland": { center: [33.95, 135.26], zoom: 11 },
+};
 

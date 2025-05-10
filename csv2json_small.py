@@ -15,13 +15,8 @@ def main(input_path, output_path):
     final_data = merged_data.copy()[['area_id', 'name', 'lat', 'long', 'status', 'note']]
 
     area_blocks = {
-        '23-east': '23区東部',
-        '23-west': '23区西部',
-        '23-city': '23区都心部',
-        'tama-north': '多摩北部',
-        'tama-south': '多摩南部',
-        'tama-west': '多摩西部',
-        'island': '島しょ部',
+        'hidaka-coast': 'hidaka-coast',
+        'hidaka-inland': 'hidaka-inland',
     }
     
     for block_key, block_name in area_blocks.items():

@@ -1,3 +1,4 @@
+// 例: /map?block=hidaka-coast  または /map?block=hidaka-inland
 function getBlockFromUrlParam() {
   const params = new URL(document.location.href).searchParams
   const block = params.get("block")
@@ -93,42 +94,18 @@ function onLocationFound(e) {
 function onLocationError(e) {
   // alert(e.message);
   const mapConfig = {
-    '23-east': {
-      'lat': 35.7266074,
-      'long': 139.8292152,
-      'zoom': 14,
+    // 日高郡ブロック設定
+    'hidaka-coast': {
+      lat: 33.93,
+      long: 135.11,
+      zoom: 11,
     },
-    '23-west': {
-      'lat': 35.6861171,
-      'long': 139.6490942,
-      'zoom': 13,
+    'hidaka-inland': {
+      lat: 33.95,
+      long: 135.26,
+      zoom: 11,
     },
-    '23-city': {
-      'lat': 35.6916896,
-      'long': 139.7254559,
-      'zoom': 14,
-    },
-    'tama-north': {
-      'lat': 35.731028, 
-      'long': 139.481822,
-      'zoom': 13,
-    },
-    'tama-south': {
-      'lat': 35.6229399,
-      'long': 139.4584664,
-      'zoom': 13,
-    },
-    'tama-west': {
-      'lat': 35.7097579, 
-      'long': 139.2904051,
-      'zoom': 12,
-    },
-    'island': {
-      'lat': 34.5291416,
-      'long': 139.2819004,
-      'zoom': 11,
-    },
-  }
+  };
   const block = getBlockFromUrlParam()
   let latlong, zoom;
   if (block == null) {
